@@ -1,0 +1,25 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+  <link href="/static/poem.css" rel="stylesheet" type="text/css" media="screen" />
+  <title>KOT</title>
+</head>
+<body>
+  <p id="sample"></p> 
+
+  <script>
+       $.get('/static/poem.txt', function(data){
+         var poemStrings = data.split("\n");
+	  $('#sample').typeIt({
+  	       strings: poemStrings,
+	       speed: 50,
+	       autoStart: false
+ 	  });         
+       }) 
+  </script>
+</body>
+</html>

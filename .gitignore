@@ -1,0 +1,10 @@
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# secrets
+newhope/secret_settings.py
+
+static/png/
+static/*.swf

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>alwaysdata</title>
+    <link href="http://static.alwaysdata.com/v3/images/favicon.ico" rel="shortcut icon" />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold&subset=latin' rel='stylesheet' type='text/css'>
+    <link href="http://static.alwaysdata.com/v3/css/common.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="http://static.alwaysdata.com/v3/css/new.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="/static/main.css" rel="stylesheet" type="text/css" media="screen" />
+    <!--[if !IE 7]>
+        <style type="text/css">
+            #global {display:table;height:100%}
+        </style>
+    <![endif]-->
+    <style>
+        h1 {
+            color: #000000;
+            font-weight: bold;
+            font-family: Sans;
+            /*text-shadow: none;*/
+        }
+    </style>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23595952-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</head>
+
+<body class="funny">
+
+    <div id="centralblock" class="shadowed radius">
+        <h1><a href="http://lot49.alwaysdata.net/">{{fromlang.capitalize}}-{{tolang}} {{header}}list</a></h1>
+        <form method="post" name="reqform" style="visibility:{{show_form}}">
+        {% csrf_token %}
+        <textarea name="reqlist" size="600"></textarea>
+        <input type="submit" value="{{translate_button_text}}" />
+        </form>
+        <!--p style="color:#ffffff">{{hidden_text}}</p-->
+        <!--div-->
+        <table style="visibility:{{show_table}}">
+        <tr style="visibility:{{show_req}}"><td>Request: </td><td><p style="font-size: 14px">{{request_text}}</p></td></tr>
+        <!--tr style="visibility:{{show_translation_direction}}"><td>{{translation_direction}} </td><td><p style="font-size: 14px">{{fromlang}}-&gt;{{tolang}}</p></td></tr-->
+        <tr style="visibility:{{show_trans}}"><td>Translation:&nbsp;</td><td><p style="font-size: 14px; font-weight: bold">{{translation_text|safe}}</p></td></tr>
+        <!--tr style="visibiliy:{{show_redir}}"><td>Redirected from:&nbsp;</td><td><p style="font-size: 14px">{{redirected_text}}</p></td></tr-->
+        </table>
+        <!--/div-->
+        <div style="visibility:{{show_versions}}">
+        <hr>
+        <p>{{versions_header_text}}</p>
+        {% for v in versions %} <a href="/wikitranslator/{{fromlang}}/{{tolang}}?req={{v}}">{{v}}</a><br/> {% endfor %}
+        </div>
+        <p>{{text|safe}}</p>
+        <p>&nbsp;</p>
+        <p style="font-size:small">Powered by wikipedia.org</p>
+        <p class="copyrightnote">Background image by <a href="http://maquenda.deviantart.com/">Maquenda</a></p>        
+    </div>
+
+    <script type="text/javascript">
+    document.reqform.req.focus();
+    </script>
+
+</body>
+
+</html>

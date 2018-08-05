@@ -1,0 +1,34 @@
+.outer {
+  width: 16px;
+  height: 16px;
+  padding-left: 16px;
+  background: url("/static/png/account-login.png");
+  background-position: center;
+  background-repeat: no-repeat;  
+}
+
+body {
+    padding-top: 120px !important;
+}
+.funny {
+  background: url("/static/pattern_of_dog_by_maquenda-dbhe600.jpg") 100% 100% repeat;
+}
+.copyrightnote {
+  style="font-size:small";
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    padding-top: 10px !important;
+  }
+  #centralblock {
+    width: 90% !important;
+  }
+  .funny {
+    background: none;
+    background-color: lightgray;
+  }
+  .copyrightnote {
+    display: none;
+  }
+}
