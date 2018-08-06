@@ -8,3 +8,5 @@ newhope/secret_settings.py
 
 static/png/
 static/*.swf
+
+reqlog.txt

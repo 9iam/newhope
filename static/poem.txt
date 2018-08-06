@@ -17,5 +17,4 @@
 Наглец!
 &shy;
 &shy;
-&shy;
 <img src="/static/cat.png"></img>
